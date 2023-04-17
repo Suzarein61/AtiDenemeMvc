@@ -1,0 +1,45 @@
+﻿@model UserSignInViewModel
+
+
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Sayfası</title>
+    <link rel="stylesheet" href="~/css/gpt1.css">
+</head>
+<body>
+    <form asp-action="Index">
+        <h1>Giriş Yap</h1>
+        <div asp-validation-summary="All"></div>
+        <label for="UserName">Kullanıcı Adı:</label>
+        <input asp-for="UserName" class="form-control" placeholder="User Name">
+        <label for="Password">Şifre:</label>
+        <input asp-for="Password" type="Password" class="form-control" placeholder="Password">
+        <input type="submit" value="Giriş Yap">
+    </form>
+</body>
+</html>
+
+
+@*<h3>Giriş yap</h3>
+
+<form asp-action="Index">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label for="UserName">Kullanıcı Adı</label>
+        <input asp-for="UserName" class="form-control" placeholder="User Name">
+    </div>
+
+    <div class="form-group">
+        <label for="Password">Password</label>
+        <input asp-for="Password" type="Password" class="form-control" placeholder="Password">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <label>hesabın yok mu? <a asp-controller="RegisterUser">Üye Ol</a></label>
+</form>
+
+*@
+

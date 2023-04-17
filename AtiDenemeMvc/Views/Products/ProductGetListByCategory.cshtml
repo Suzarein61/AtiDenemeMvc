@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Entities.Concrete.Product>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">ProductName</th>
+            <th scope="col">CatagoryID</th>
+            <th scope="col">UnitPrice</th>
+            <th scope="col">UnitsInStock</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.ProductID</th>
+                <td>@item.ProductName</td>
+                <td>@item.CategoryID</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.UnitsInStock</td>
+                <td><a class="btn-danger" asp-action="ProductDelete" asp-route-id="@item.ProductID">Delete</a></td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>

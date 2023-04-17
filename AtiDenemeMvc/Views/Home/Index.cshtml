@@ -1,0 +1,18 @@
+﻿ 
+@if(User.Identity.IsAuthenticated == true)
+{
+    <div class="text-center">
+        <h1 class="display-6">Hoşgeldiniz @User.Identity.Name</h1>
+
+    </div>
+
+}
+else
+{
+    <div class="text-center">
+        <h1 class="display-6">Hoşgeldiniz</h1>
+
+    </div>
+}
+
+

@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Entities.Concrete.Category>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">kategori Id</th>
+            <th scope="col">kategori ismi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.CategoryId</th>
+                <td>@item.CategoryName</td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>

@@ -1,0 +1,18 @@
+﻿@model Entities.Concrete.Product
+
+<h1>ürün ekle</h1>
+<form asp-controller="Products" asp-action="ProductAdd">
+    <label asp-for="ProductName">Ürün ismi:</label><br>
+    <input asp-for="ProductName" /><br />
+
+    <label asp-for="CategoryID">Kategori ID:</label><br>
+    <input asp-for="CategoryID" /><br />
+
+    <label asp-for="UnitPrice">Birim fiyat:</label><br>
+    <input asp-for="UnitPrice" /><br />
+
+    <label asp-for="UnitsInStock">Stok adedi:</label><br>
+    <input asp-for="UnitsInStock" /><br />
+
+    <input type="submit" value="Gönder" />
+</form>

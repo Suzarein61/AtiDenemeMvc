@@ -1,0 +1,28 @@
+﻿@model List<DenemeModel>
+
+<table class ="table table-striped">
+    <thead>
+        <tr>
+            <td>ProductID</td>
+            <td>ProductName</td>
+            <td>CategoryID</td>
+            <td>QuantityPerUnit</td>
+            <td>UnitPrice</td>
+            <td>UnitsInStock</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductID</td>
+                <td>@item.ProductName</td>
+                <td>@item.CategoryID</td>
+                <td>@item.QuantityPerUnit</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.UnitsInStock</td>
+            </tr>
+        }
+    </tbody>
+</table>

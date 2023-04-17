@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Entities.Concrete.Product>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ürünler</title>
+    <link href="~/css/gptProduct.css" rel="stylesheet" />
+</head>
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+<body>
+    <div class="container">
+        <h1>Ürünler</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="@Url.Action("ProductAdd","Products")" class="btn btn-primary">Ürün Ekle</a>
+            </div>
+            <div class="col-md-8">
+                <form class="form-inline" method="post" asp-controller="Products" asp-action="ProductGetById">
+                    <label>Ürün Id'ye göre arama'</label>
+                    <input name="id" /> <br />
+                    <button class="btn btn-outline-secondary" type="submit">Ara</button>
+                </form>
+              
+                <form class="form-inline" method="post" asp-controller="Products" asp-action="ProductGetListByCategory">
+                    <label class="alert-heading">Kategori Id'ye göre arama'</label>
+                    <input name="id" /> <br />
+                    <button class="btn btn-outline-secondary" type="submit">katagoriye göre Ara</button>
+                </form>
+
+            </div>
+        </div>
+        <hr />
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ürün Adı</th>
+                    <th>Kategori ID</th>
+                    <th>Fiyat</th>
+                    <th>Stok Adedi</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ProductID</td>
+                        <td>@item.ProductName</td>
+                        <td>@item.CategoryID</td>
+                        <td>@item.UnitPrice</td>
+                        <td>@item.UnitsInStock</td>
+                        <td>
+                            @* <a href="@Url.Action("DeleteProduct", "Product", new { id = Model.Id })" class="btn btn-danger btn-xs">Sil</a>*@
+                            <a class="btn btn-danger" asp-action="ProductDelete" asp-route-id="@item.ProductID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@model Entities.Concrete.Product
+<h1> product</h1>
+
+<a asp-controller="Products" asp-action="ProductList">ürünleri listele</a>
+<br />
+
+<label>ürün id ye göre </label>
+<form method="post" asp-controller="Products" asp-action="ProductGetById">
+    <input name="id" /> <br />
+    <button type="submit">Ara</button>
+</form>
+<br />
+<a asp-controller="Products" asp-action="ProductAdd">ürün ekle</a>
+
+<br />
+
+<label>kategori id ye göre </label>
+<form method="post" asp-controller="Products" asp-action="ProductGetListByCategory">
+    <input name="id" /> <br />
+    <button type="submit">katagoriye göre Ara</button>
+</form>
+<br />*@
+
+
+
+

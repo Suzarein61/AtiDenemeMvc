@@ -1,0 +1,29 @@
+﻿@model Entities.Concrete.Product
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">ProductName</th>
+            <th scope="col">CatagoryID</th>
+            <th scope="col">UnitPrice</th>
+            <th scope="col">UnitsInStock</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <th scope="row">@Model.ProductID</th>
+            <td>@Model.ProductName</td>
+            <td>@Model.CategoryID</td>
+            <td>@Model.UnitPrice</td>
+            <td>@Model.UnitsInStock</td>
+            <td><a class="btn btn-danger" asp-action="ProductDelete" asp-route-id="@Model.ProductID">Delete</a></td>
+
+        </tr>
+
+
+    </tbody>
+</table>
+

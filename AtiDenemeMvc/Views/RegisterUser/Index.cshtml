@@ -1,0 +1,42 @@
+﻿@model UserSignUpViewModel
+
+
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>üye ol</title>
+    <link rel="stylesheet" href="~/css/gpt1.css">
+</head>
+<body>
+    <form asp-action="Index">
+        <h1>Kayıt Ol</h1>
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label for="NameSurname">NameSurname</label>
+            <input asp-for="NameSurname" class="form-control" placeholder="Name Surname">
+        </div>
+        <div class="form-group">
+            <label for="UserName">UserName</label>
+            <input asp-for="UserName" class="form-control" placeholder="User Name">
+        </div>
+
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input asp-for="Password" type="Password" class="form-control" placeholder="Password">
+        </div>
+
+        <div class="form-group">
+            <label for="RePassword">RePassword</label>
+            <input asp-for="RePassword" type="Password" class="form-control" placeholder="RePassword">
+        </div>
+
+        <div class="form-group">
+            <label for="Mail">Mail</label>
+            <input asp-for="Mail" class="form-control" placeholder="Mail">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body>
+</html>
